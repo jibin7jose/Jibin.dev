@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Jibin Jose | Portfolio">
+	<section id="home">
+		<header>
+			<h1>Jibin Jose</h1>
+			<p class="subtitle">Software Engineer & Game Developer</p>
+			<div class="contact-grid">
+				<span>📍 Vazhakulam, Muvattupuzha, India</span>
+				<span>📞 +91-7994279661</span>
+				<span>📧 <a href="mailto:jibinjose884@gmail.com">jibinjose884@gmail.com</a></span>
+				<span>🌐 <a href="https://jibinjose-portfolio.vercel.app/" target="_blank">Portfolio</a></span>
+			</div>
+		</header>
+		
+		<div class="about-card">
+			<h3>About Me</h3>
+			<p>I am a Frontend Developer skilled in HTML, CSS, JavaScript, React.js, and UI/UX Design with hands-on experience in building responsive applications using Next.js and TypeScript. I have a strong background in building interactive web applications and game development using C++ and Unreal Engine. I am eager to contribute to innovative projects and continuously enhance my skills in responsive design, API integration, and Agile development environments.</p>
+		</div>
+	</section>
+
+	<hr />
+
+	<section id="about">
+		<h2>Skills & Expertise</h2>
+		<div class="skills-grid">
+			<div class="skill-category">
+				<strong>Languages</strong>
+				<p>C++, Java, JavaScript, TypeScript, PHP</p>
+			</div>
+			<div class="skill-category">
+				<strong>Frontend</strong>
+				<p>React.js, Next.js, React Native, Tailwind CSS, HTML5, CSS3</p>
+			</div>
+			<div class="skill-category">
+				<strong>Backend & DB</strong>
+				<p>NestJS, Node.js, Laravel, PostgreSQL, MySQL, SQLite, MongoDB, Prisma</p>
+			</div>
+			<div class="skill-category">
+				<strong>Tools & Cloud</strong>
+				<p>AWS (EC2, RDS, S3), Git, GitHub, Figma, Unreal Engine 5</p>
+			</div>
+		</div>
+
+		<h3>Education</h3>
+		<div class="timeline-item">
+			<div class="timeline-header">
+				<strong>B.Tech in Computer Science and Engineering</strong>
+				<span>2021 – 2025</span>
+			</div>
+			<p>University College of Engineering, Thodupuzha</p>
+		</div>
+		<div class="timeline-item">
+			<div class="timeline-header">
+				<strong>Higher Secondary Education</strong>
+				<span>2019 – 2021</span>
+			</div>
+			<p>SAHSS Kalloorkad, Ernakulam</p>
+		</div>
+	</section>
+
+	<hr />
+
+	<section id="projects">
+		<h2>Featured Projects</h2>
+		
+		<div class="project-card">
+			<div class="project-header">
+				<h4>Outbreak FPS Game</h4>
+				<span class="tech-tag">Unreal Engine 5</span>
+			</div>
+			<p>A high-intensity zombie survival game featuring adaptive AI and procedural world generation. Built as a B.Tech final-year project using C++ and Blueprints.</p>
+		</div>
+
+		<div class="project-card">
+			<div class="project-header">
+				<h4>SolidServe</h4>
+				<span class="tech-tag">Next.js</span>
+			</div>
+			<p>A comprehensive CRUD web application for Kerala Akshaya centers. Streamlines workflows with invoice generation, wallet management, and real-time transaction monitoring.</p>
+		</div>
+
+		<div class="project-card">
+			<div class="project-header">
+				<h4>BMW 3D Experience</h4>
+				<span class="tech-tag">Three.js + GSAP</span>
+			</div>
+			<p>Interactive 3D car experience with realistic lighting, textures, and smooth camera animations rendered directly in the browser.</p>
+		</div>
+
+		<div class="project-card">
+			<div class="project-header">
+				<h4>KUTZ Chat Application</h4>
+				<span class="tech-tag">Socket.IO + React</span>
+			</div>
+			<p>Full-stack real-time chat platform with authentication, one-to-one messaging, and online status monitoring.</p>
+		</div>
+
+		<div class="project-card">
+			<div class="project-header">
+				<h4>Lyra Realtors</h4>
+				<span class="tech-tag">Next.js + TypeScript</span>
+			</div>
+			<p>Modern real estate platform featuring advanced property search, filtering, and a premium responsive UI.</p>
+		</div>
+	</section>
+
+	<hr />
+
+	<section id="experience">
+		<h2>Work Experience</h2>
+		
+		<div class="experience-item">
+			<div class="timeline-header">
+				<strong>Software Engineer</strong>
+				<span>Nov 2025 – Present</span>
+			</div>
+			<p class="company">ABHRAM TECHNOLOGIES (Onsite)</p>
+			<ul>
+				<li>Developing mobile and web apps using React Native, Next.js, and NestJS.</li>
+				<li>Implementing JWT authentication, RBAC, and managing AWS S3/EC2 hosting.</li>
+				<li>Handling offline data synchronization with SQLite and AsyncStorage.</li>
+			</ul>
+		</div>
+
+		<div class="experience-item">
+			<div class="timeline-header">
+				<strong>Junior Software Developer Trainee</strong>
+				<span>Jul 2025 – Oct 2025</span>
+			</div>
+			<p class="company">MDigitz (Onsite)</p>
+			<ul>
+				<li>Trained in Laravel full-stack development; built dynamic web applications.</li>
+				<li>Assisted in debugging, testing, and optimizing database schemas (MySQL).</li>
+			</ul>
+		</div>
+
+		<div class="experience-item">
+			<div class="timeline-header">
+				<strong>Full Stack Development Intern</strong>
+				<span>Mar 2025 – Jun 2025</span>
+			</div>
+			<p class="company">Edu-versity (Remote)</p>
+			<ul>
+				<li>Gained hands-on experience in MERN stack development and real-time features.</li>
+			</ul>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.subtitle { font-size: 1.2rem; color: #636e72; margin-top: -1rem; }
+	.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem; }
+	.about-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #0984e3; }
+	
+	.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
+	.skill-category strong { display: block; margin-bottom: 0.2rem; color: #000; }
+	.skill-category p { margin: 0; font-size: 0.95rem; }
+
+	.timeline-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+	.timeline-header span { font-size: 0.85rem; color: #636e72; font-weight: 500; }
+	.timeline-item { margin-bottom: 1.2rem; }
+	
+	.project-card { margin-bottom: 2rem; padding: 1rem; border: 1px solid #dfe6e9; border-radius: 6px; }
+	.project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
+	.project-header h4 { margin: 0; }
+	.tech-tag { font-size: 0.75rem; background: #e1f5fe; color: #01579b; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 600; }
+
+	.experience-item { margin-bottom: 2.5rem; }
+	.company { margin: 0.2rem 0 0.5rem 0; font-weight: 600; color: #0984e3; }
+	
+	@media (max-width: 600px) {
+		.skills-grid { grid-template-columns: 1fr; }
+	}
+</style>
