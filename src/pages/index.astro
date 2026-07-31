@@ -3,56 +3,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Jibin Jose | Portfolio">
-	<section id="home">
+	<section id="home" data-aos="fade-up">
 		<header>
-			<h1>Jibin Jose</h1>
+			<h1 class="gradient-text">Jibin Jose</h1>
 			<p class="subtitle">Software Engineer & Game Developer</p>
 			<div class="contact-grid">
-				<span>📍 Vazhakulam, Muvattupuzha, India</span>
-				<span>📞 +91-7994279661</span>
-				<span>📧 <a href="mailto:jibinjose884@gmail.com">jibinjose884@gmail.com</a></span>
-				<span>🌐 <a href="https://jibinjose-portfolio.vercel.app/" target="_blank">Portfolio</a></span>
+				<span><i class="ph ph-map-pin"></i> Vazhakulam, Muvattupuzha, India</span>
+				<span><i class="ph ph-phone"></i> +91-7994279661</span>
+				<span><i class="ph ph-envelope"></i> <a href="mailto:jibinjose884@gmail.com">jibinjose884@gmail.com</a></span>
 			</div>
 		</header>
 		
-		<div class="about-card">
+		<div class="about-card" data-aos="fade-up" data-aos-delay="200">
 			<h3>About Me</h3>
-			<p>I am a Frontend Developer skilled in HTML, CSS, JavaScript, React.js, and UI/UX Design with hands-on experience in building responsive applications using Next.js and TypeScript. I have a strong background in building interactive web applications and game development using C++ and Unreal Engine. I am eager to contribute to innovative projects and continuously enhance my skills in responsive design, API integration, and Agile development environments.</p>
+			<p>Results-driven Full Stack Software Engineer with 1+ year of experience designing, developing, and deploying scalable web and mobile applications. Experienced in frontend and backend development using React.js, Next.js, NestJS, TypeScript, and PostgreSQL. I have built and delivered production-grade platforms including a sports analytics system, a government service portal, and e-commerce applications. Skilled in RESTful API development, microservices architecture, AWS cloud infrastructure, and CI/CD pipelines, I am a strong collaborator focused on clean architecture, scalability, and high-performance systems.</p>
 		</div>
 	</section>
 
-	<hr />
+	<hr data-aos="fade-in" />
 
-	<section id="about">
+	<section id="about" data-aos="fade-up">
 		<h2>Skills & Expertise</h2>
 		<div class="skills-grid">
-			<div class="skill-category">
+			<div class="skill-category" data-aos="fade-up" data-aos-delay="100">
 				<strong>Languages</strong>
 				<p>C++, Java, JavaScript, TypeScript, PHP</p>
 			</div>
-			<div class="skill-category">
+			<div class="skill-category" data-aos="fade-up" data-aos-delay="200">
 				<strong>Frontend</strong>
 				<p>React.js, Next.js, React Native, Tailwind CSS, HTML5, CSS3</p>
 			</div>
-			<div class="skill-category">
+			<div class="skill-category" data-aos="fade-up" data-aos-delay="300">
 				<strong>Backend & DB</strong>
 				<p>NestJS, Node.js, Laravel, PostgreSQL, MySQL, SQLite, MongoDB, Prisma</p>
 			</div>
-			<div class="skill-category">
+			<div class="skill-category" data-aos="fade-up" data-aos-delay="400">
 				<strong>Tools & Cloud</strong>
-				<p>AWS (EC2, RDS, S3), Git, GitHub, Figma, Unreal Engine 5</p>
+				<p>AWS (EC2, RDS, S3), GitHub Actions, Vercel, Render, Git, Figma</p>
 			</div>
 		</div>
 
-		<h3>Education</h3>
-		<div class="timeline-item">
+		<h3 data-aos="fade-up">Education</h3>
+		<div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
 			<div class="timeline-header">
 				<strong>B.Tech in Computer Science and Engineering</strong>
 				<span>2021 – 2025</span>
 			</div>
 			<p>University College of Engineering, Thodupuzha</p>
 		</div>
-		<div class="timeline-item">
+		<div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
 			<div class="timeline-header">
 				<strong>Higher Secondary Education</strong>
 				<span>2019 – 2021</span>
@@ -61,12 +60,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</div>
 	</section>
 
-	<hr />
+	<hr data-aos="fade-in" />
 
-	<section id="projects">
+	<section id="projects" data-aos="fade-up">
 		<h2>Featured Projects</h2>
 		
-		<div class="project-card">
+		<div class="project-card" data-aos="fade-up" data-aos-delay="50">
+			<div class="project-header">
+				<h4>H10 – Sports Analytics Platform</h4>
+				<span class="tech-tag">Next.js + NestJS + AWS</span>
+			</div>
+			<p>Architected a full-stack sports analytics platform with real-time dashboards, multi-tenant club management, and role-based access. Reduced report generation time by 60% with automated PDF/Excel workflows.</p>
+		</div>
+
+		<div class="project-card" data-aos="fade-up" data-aos-delay="100">
 			<div class="project-header">
 				<h4>Outbreak FPS Game</h4>
 				<span class="tech-tag">Unreal Engine 5</span>
@@ -74,7 +81,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<p>A high-intensity zombie survival game featuring adaptive AI and procedural world generation. Built as a B.Tech final-year project using C++ and Blueprints.</p>
 		</div>
 
-		<div class="project-card">
+		<div class="project-card" data-aos="fade-up" data-aos-delay="200">
 			<div class="project-header">
 				<h4>SolidServe</h4>
 				<span class="tech-tag">Next.js</span>
@@ -82,7 +89,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<p>A comprehensive CRUD web application for Kerala Akshaya centers. Streamlines workflows with invoice generation, wallet management, and real-time transaction monitoring.</p>
 		</div>
 
-		<div class="project-card">
+		<div class="project-card" data-aos="fade-up" data-aos-delay="300">
 			<div class="project-header">
 				<h4>BMW 3D Experience</h4>
 				<span class="tech-tag">Three.js + GSAP</span>
@@ -90,7 +97,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<p>Interactive 3D car experience with realistic lighting, textures, and smooth camera animations rendered directly in the browser.</p>
 		</div>
 
-		<div class="project-card">
+		<div class="project-card" data-aos="fade-up" data-aos-delay="400">
 			<div class="project-header">
 				<h4>KUTZ Chat Application</h4>
 				<span class="tech-tag">Socket.IO + React</span>
@@ -98,7 +105,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 			<p>Full-stack real-time chat platform with authentication, one-to-one messaging, and online status monitoring.</p>
 		</div>
 
-		<div class="project-card">
+		<div class="project-card" data-aos="fade-up" data-aos-delay="500">
 			<div class="project-header">
 				<h4>Lyra Realtors</h4>
 				<span class="tech-tag">Next.js + TypeScript</span>
@@ -107,69 +114,136 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		</div>
 	</section>
 
-	<hr />
+	<hr data-aos="fade-in" />
 
-	<section id="experience">
+	<section id="experience" data-aos="fade-up">
 		<h2>Work Experience</h2>
-		
-		<div class="experience-item">
+
+		<div class="experience-item" data-aos="fade-left" data-aos-delay="100">
 			<div class="timeline-header">
 				<strong>Software Engineer</strong>
-				<span>Nov 2025 – Present</span>
+				<span>Nov 2025 – May 2026</span>
 			</div>
 			<p class="company">ABHRAM TECHNOLOGIES (Onsite)</p>
 			<ul>
-				<li>Developing mobile and web apps using React Native, Next.js, and NestJS.</li>
-				<li>Implementing JWT authentication, RBAC, and managing AWS S3/EC2 hosting.</li>
-				<li>Handling offline data synchronization with SQLite and AsyncStorage.</li>
+				<li>Architected and delivered a cross-platform solution (web & tablet) using React Native, Next.js, and NestJS.</li>
+				<li>Designed 10+ secure RESTful APIs and enforced application security via JWT and RBAC.</li>
+				<li>Provisioned AWS infrastructure (EC2, S3, RDS) and built offline-sync pipelines using SQLite.</li>
 			</ul>
 		</div>
-
-		<div class="experience-item">
+		
+		<div class="experience-item" data-aos="fade-left" data-aos-delay="200">
 			<div class="timeline-header">
 				<strong>Junior Software Developer Trainee</strong>
 				<span>Jul 2025 – Oct 2025</span>
 			</div>
 			<p class="company">MDigitz (Onsite)</p>
 			<ul>
-				<li>Trained in Laravel full-stack development; built dynamic web applications.</li>
-				<li>Assisted in debugging, testing, and optimizing database schemas (MySQL).</li>
+				<li>Developed and maintained dynamic web applications using Laravel MVC and RESTful APIs.</li>
+				<li>Built Belmountie Furniture E-Commerce and FIG User Directory Platform with full CRUD.</li>
+				<li>Collaborated on database schema design, deployment workflows, and Git-based version control.</li>
 			</ul>
 		</div>
 
-		<div class="experience-item">
+		<div class="experience-item" data-aos="fade-left" data-aos-delay="300">
 			<div class="timeline-header">
 				<strong>Full Stack Development Intern</strong>
 				<span>Mar 2025 – Jun 2025</span>
 			</div>
 			<p class="company">Edu-versity (Remote)</p>
 			<ul>
-				<li>Gained hands-on experience in MERN stack development and real-time features.</li>
+				<li>Developed and shipped 3+ full-stack features using MERN stack within an agile team.</li>
+				<li>Implemented real-time UI updates via asynchronous data flows.</li>
 			</ul>
 		</div>
+	</section>
+
+	<hr data-aos="fade-in" />
+
+	<section id="extra" data-aos="fade-up">
+		<h2>Certifications & Activities</h2>
+		
+		<h3 data-aos="fade-up" style="margin-top: 1.5rem;">Certifications</h3>
+		<ul data-aos="fade-left" data-aos-delay="100">
+			<li><strong>The MERN Fullstack Guide</strong> (Udemy, Jun 2024) - React.js, Node.js, MongoDB, REST APIs</li>
+			<li><strong>Python Mentorship Program</strong> (IEEE, Aug 2023) - Algorithmic Thinking, Data Structures</li>
+		</ul>
+
+		<h3 data-aos="fade-up">Leadership & Activities</h3>
+		<ul data-aos="fade-left" data-aos-delay="200">
+			<li><strong>NSS Volunteer:</strong> Coordinated community service programmes in health and education.</li>
+			<li><strong>Tech Fest Programme Coordinator:</strong> Managed scheduling and logistics for EDUINO at UCE.</li>
+		</ul>
 	</section>
 </BaseLayout>
 
 <style>
-	.subtitle { font-size: 1.2rem; color: #636e72; margin-top: -1rem; }
-	.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem; }
-	.about-card { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid #0984e3; }
+	section { scroll-margin-top: 100px; }
+	header { text-align: center; }
+	.gradient-text {
+		background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		display: inline-block;
+	}
+	.subtitle { font-size: 1.25rem; color: #94a3b8; margin-top: -1rem; font-weight: 400; }
+	.contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 1.5rem; margin-top: 1.5rem; font-size: 0.95rem; }
+	.contact-grid a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+	.contact-grid a:hover { color: #818cf8; }
+	.contact-grid span { display: flex; align-items: center; gap: 0.5rem; }
 	
-	.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
-	.skill-category strong { display: block; margin-bottom: 0.2rem; color: #000; }
-	.skill-category p { margin: 0; font-size: 0.95rem; }
+	.about-card { 
+		background: var(--card-bg); 
+		padding: 2rem; 
+		border-radius: 12px; 
+		margin-top: 2.5rem; 
+		border: 1px solid var(--border);
+		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+		position: relative;
+		overflow: hidden;
+	}
+	.about-card::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 4px;
+		background: linear-gradient(to bottom, #38bdf8, #818cf8);
+	}
+	
+	.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+	.skill-category { background: var(--card-bg); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s ease, border-color 0.2s ease; }
+	.skill-category:hover { transform: translateY(-3px); border-color: var(--link); }
+	.skill-category strong { display: block; margin-bottom: 0.5rem; color: var(--heading); font-size: 1.1rem; }
+	.skill-category p { margin: 0; font-size: 0.95rem; color: var(--text); }
 
 	.timeline-header { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
-	.timeline-header span { font-size: 0.85rem; color: #636e72; font-weight: 500; }
-	.timeline-item { margin-bottom: 1.2rem; }
+	.timeline-header strong { color: var(--heading); font-size: 1.1rem; }
+	.timeline-header span { font-size: 0.9rem; color: #94a3b8; font-weight: 500; }
+	.timeline-item { margin-bottom: 1.5rem; padding-left: 1rem; border-left: 2px solid var(--border); position: relative; }
+	.timeline-item::before { content: ''; position: absolute; left: -6px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--link); }
+	.timeline-item p { margin: 0.5rem 0 0; }
 	
-	.project-card { margin-bottom: 2rem; padding: 1rem; border: 1px solid #dfe6e9; border-radius: 6px; }
-	.project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem; }
-	.project-header h4 { margin: 0; }
-	.tech-tag { font-size: 0.75rem; background: #e1f5fe; color: #01579b; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 600; }
+	.project-card { 
+		margin-bottom: 1.5rem; 
+		padding: 1.5rem; 
+		background: var(--card-bg);
+		border: 1px solid var(--border); 
+		border-radius: 12px; 
+		transition: all 0.2s ease;
+	}
+	.project-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--link);
+		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+	}
+	.project-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
+	.project-header h4 { margin: 0; color: var(--heading); font-size: 1.25rem; }
+	.tech-tag { font-size: 0.75rem; background: rgba(56, 189, 248, 0.1); color: var(--link); padding: 0.3rem 0.8rem; border-radius: 9999px; font-weight: 600; border: 1px solid rgba(56, 189, 248, 0.2); }
 
 	.experience-item { margin-bottom: 2.5rem; }
-	.company { margin: 0.2rem 0 0.5rem 0; font-weight: 600; color: #0984e3; }
+	.company { margin: 0.3rem 0 0.8rem 0; font-weight: 600; color: var(--link); }
 	
 	@media (max-width: 600px) {
 		.skills-grid { grid-template-columns: 1fr; }

@@ -1,0 +1,193 @@
+---
+---
+<aside class="sidebar" id="sidebar">
+    <div class="scroll-spy-group">
+        <a href="#home" data-section="home" class="sidebar-link active" title="Home">
+            <i class="ph ph-house"></i>
+        </a>
+        <a href="#about" data-section="about" class="sidebar-link" title="About">
+            <i class="ph ph-user"></i>
+        </a>
+        <a href="#projects" data-section="projects" class="sidebar-link" title="Projects">
+            <i class="ph ph-briefcase"></i>
+        </a>
+        <a href="#experience" data-section="experience" class="sidebar-link" title="Experience">
+            <i class="ph ph-certificate"></i>
+        </a>
+        <a href="#extra" data-section="extra" class="sidebar-link" title="Certifications & Activities">
+            <i class="ph ph-star"></i>
+        </a>
+    </div>
+    
+    <div class="social-group">
+        <a href="https://github.com/jibin7jose" target="_blank" class="social-link" title="GitHub">
+            <i class="ph ph-github-logo"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/jibin--jose" target="_blank" class="social-link" title="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+        </a>
+    </div>
+</aside>
+
+<style>
+    .sidebar {
+        position: fixed;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        z-index: 100;
+    }
+    
+    .scroll-spy-group {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    
+    /* The vertical line for scroll spy */
+    .scroll-spy-group::before {
+        content: '';
+        position: absolute;
+        top: 18px; /* Starts exactly at the center of the first 36px icon */
+        bottom: 18px; /* Ends exactly at the center of the last 36px icon */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        background-color: var(--border, #e2e8f0);
+        z-index: -1;
+    }
+    
+    .social-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--border, #e2e8f0);
+        width: 48px;
+    }
+    
+    .social-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: var(--card-bg, #ffffff);
+        color: var(--text, #475569);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border, #e2e8f0);
+    }
+    
+    .social-link i {
+        font-size: 1.25rem;
+    }
+    
+    .social-link:hover {
+        background-color: var(--link, #0284c7);
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px -2px rgba(2, 132, 199, 0.4);
+    }
+    
+    .sidebar-link {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: var(--bg, #ffffff);
+        color: #94a3b8; /* Inactive icon color */
+        text-decoration: none;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+    }
+    
+    .sidebar-link i {
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-link:hover {
+        color: var(--link, #0284c7);
+        transform: scale(1.1);
+    }
+    
+    .sidebar-link.active {
+        background-color: var(--link, #0284c7);
+        color: #ffffff; /* Show active icon in white */
+        box-shadow: 0 4px 10px -2px rgba(2, 132, 199, 0.4);
+        border: 2px solid var(--bg, #ffffff);
+        transform: scale(1.15);
+    }
+    
+    @media (max-width: 1024px) {
+        .sidebar {
+            display: none;
+        }
+    }
+</style>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll("section[id]");
+        const sidebarLinks = document.querySelectorAll(".sidebar-link");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        function updateActiveSection() {
+            let currentId = '';
+            const triggerPoint = window.innerHeight / 3; // Trigger when section hits top 1/3 of screen
+
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                // Check if the trigger point is inside the section
+                if (rect.top <= triggerPoint && rect.bottom >= triggerPoint) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+
+            // Fallback: If scrolled to the very bottom, force the last section
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+                currentId = sections[sections.length - 1].getAttribute('id');
+            }
+            
+            // Fallback: If at the very top, force the first section
+            if (window.scrollY === 0) {
+                currentId = sections[0].getAttribute('id');
+            }
+
+            if (currentId) {
+                sidebarLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("data-section") === currentId) {
+                        link.classList.add("active");
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("data-section") === currentId) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+        }
+
+        // Run once on load
+        updateActiveSection();
+
+        // Run on scroll
+        window.addEventListener('scroll', updateActiveSection, { passive: true });
+    });
+</script>

@@ -1,0 +1,44 @@
+---
+---
+<div class="floating-widget">
+    <a href="https://jibinjose-portfolio.vercel.app/" target="_blank" class="portfolio-link" title="View Portfolio">
+        <i class="ph ph-globe"></i>
+    </a>
+</div>
+
+<style>
+    .floating-widget {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+        z-index: 999;
+    }
+    
+    .portfolio-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background: var(--card-bg);
+        color: var(--link);
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border: 2px solid var(--border);
+        transition: all 0.2s ease;
+    }
+    .portfolio-link i {
+        font-size: 1.5rem;
+    }
+    
+    .portfolio-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-color: var(--link);
+    }
+</style>

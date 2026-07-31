@@ -1,21 +1,301 @@
 ---
 ---
-<header>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="https://github.com/jibin7jose" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/jibin--jose" target="_blank">LinkedIn</a>
+<header class="sticky-header">
+    <div class="nav-container">
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav">
+            <a href="#home" data-section="home" class="nav-link active">Home</a>
+            <a href="#about" data-section="about" class="nav-link">About</a>
+            <a href="#projects" data-section="projects" class="nav-link">Projects</a>
+            <a href="#experience" data-section="experience" class="nav-link">Experience</a>
+            <a href="#extra" data-section="extra" class="nav-link">Certifications</a>
+        </nav>
+        
+        <!-- Mobile Icon Nav (Scroll Spy) -->
+        <nav class="mobile-icon-nav">
+            <a href="#home" data-section="home" class="nav-link mobile-icon-link active"><i class="ph ph-house"></i></a>
+            <a href="#about" data-section="about" class="nav-link mobile-icon-link"><i class="ph ph-user"></i></a>
+            <a href="#projects" data-section="projects" class="nav-link mobile-icon-link"><i class="ph ph-briefcase"></i></a>
+            <a href="#experience" data-section="experience" class="nav-link mobile-icon-link"><i class="ph ph-certificate"></i></a>
+            <a href="#extra" data-section="extra" class="nav-link mobile-icon-link"><i class="ph ph-star"></i></a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open Mobile Menu">
+            <i class="ph ph-list"></i>
+        </button>
+    </div>
+    
+    <!-- Mobile Nav Menu -->
+    <nav id="mobile-nav" class="mobile-nav">
+        <a href="#home" data-section="home" class="nav-link mobile-link active">Home</a>
+        <a href="#about" data-section="about" class="nav-link mobile-link">About</a>
+        <a href="#projects" data-section="projects" class="nav-link mobile-link">Projects</a>
+        <a href="#experience" data-section="experience" class="nav-link mobile-link">Experience</a>
+        <a href="#extra" data-section="extra" class="nav-link mobile-link">Certifications</a>
+        
+        <div class="mobile-socials">
+            <a href="https://github.com/jibin7jose" target="_blank"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.linkedin.com/in/jibin--jose" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
+        </div>
     </nav>
 </header>
-<hr />
 
 <style>
-    nav {
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        margin: 0 -1.5rem 3rem -1.5rem;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+    
+    .nav-container {
         display: flex;
-        gap: 1rem;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .desktop-nav {
+        display: flex;
+        justify-content: center;
+        gap: 3rem; /* Spacious separation */
         flex-wrap: wrap;
     }
+    
+    .desktop-nav a {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+    
+    .desktop-nav a:hover, .desktop-nav a.active {
+        color: var(--link);
+        font-weight: 600;
+    }
+    
+    .desktop-nav a:hover {
+        transform: translateY(-1px);
+    }
+
+    /* Mobile specific styles */
+    .mobile-menu-btn {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.75rem;
+        color: var(--heading);
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .mobile-nav {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1.5rem;
+        
+        /* Drawer positioning */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        min-width: 220px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding: 2rem 1.5rem;
+        border-left: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        border-bottom-left-radius: 1rem;
+        box-shadow: -5px 10px 25px rgba(0,0,0,0.05);
+    }
+    
+    .mobile-nav.is-open {
+        display: flex;
+    }
+    
+    /* Opening Stagger */
+    .mobile-nav.is-open:not(.is-closing) a.mobile-link,
+    .mobile-nav.is-open:not(.is-closing) .mobile-socials {
+        animation: staggerIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 0;
+    }
+    
+    .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(1) { animation-delay: 0.05s; }
+    .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(2) { animation-delay: 0.10s; }
+    .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(3) { animation-delay: 0.15s; }
+    .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(4) { animation-delay: 0.20s; }
+    .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(5) { animation-delay: 0.25s; }
+    .mobile-nav.is-open:not(.is-closing) .mobile-socials { animation-delay: 0.30s; }
+    
+    /* Closing Stagger */
+    .mobile-nav.is-closing a.mobile-link,
+    .mobile-nav.is-closing .mobile-socials {
+        animation: staggerOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        opacity: 1;
+    }
+    
+    .mobile-nav.is-closing .mobile-socials { animation-delay: 0.0s; }
+    .mobile-nav.is-closing a.mobile-link:nth-child(5) { animation-delay: 0.05s; }
+    .mobile-nav.is-closing a.mobile-link:nth-child(4) { animation-delay: 0.10s; }
+    .mobile-nav.is-closing a.mobile-link:nth-child(3) { animation-delay: 0.15s; }
+    .mobile-nav.is-closing a.mobile-link:nth-child(2) { animation-delay: 0.20s; }
+    .mobile-nav.is-closing a.mobile-link:nth-child(1) { animation-delay: 0.25s; }
+    
+    @keyframes staggerIn {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes staggerOut {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(20px); }
+    }
+    
+    .mobile-nav a.mobile-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: var(--text);
+        font-weight: 500;
+        font-size: 1.1rem;
+        transition: color 0.2s ease;
+    }
+    
+    .mobile-nav a.mobile-link:hover, .mobile-nav a.mobile-link.active {
+        color: var(--link);
+        font-weight: 600;
+    }
+    
+    .mobile-socials {
+        display: flex;
+        gap: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px dashed var(--border);
+    }
+    
+    .mobile-socials a {
+        color: var(--text);
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    .mobile-socials a:hover {
+        color: var(--link);
+    }
+
+    .mobile-icon-nav {
+        display: none;
+    }
+
+    @media (min-width: 769px) {
+        .mobile-nav {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-container {
+            justify-content: space-between; /* Space between hamburger and icons */
+            align-items: center;
+        }
+        .desktop-nav {
+            display: none;
+        }
+        .mobile-menu-btn {
+            display: block;
+        }
+        .mobile-icon-nav {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            position: relative;
+        }
+        
+        .mobile-icon-nav::before {
+            content: '';
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 1px;
+            background-color: var(--border);
+            z-index: -1;
+        }
+        
+        .mobile-icon-nav a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #94a3b8;
+            font-size: 1.25rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+        
+        .mobile-icon-nav a.active {
+            background-color: var(--link);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px -2px rgba(2, 132, 199, 0.4);
+            transform: scale(1.15);
+        }
+    }
 </style>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        const btn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('mobile-nav');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        
+        function toggleMenu() {
+            const icon = btn.querySelector('i');
+            
+            if (nav.classList.contains('is-open') && !nav.classList.contains('is-closing')) {
+                // Trigger closing animation
+                nav.classList.add('is-closing');
+                icon.classList.remove('ph-x');
+                icon.classList.add('ph-list');
+                
+                // Wait for staggered animations to finish (0.25s delay + 0.3s duration = 0.55s)
+                setTimeout(() => {
+                    nav.classList.remove('is-open');
+                    nav.classList.remove('is-closing');
+                }, 550);
+            } else if (!nav.classList.contains('is-open')) {
+                // Open menu
+                nav.classList.add('is-open');
+                nav.classList.remove('is-closing');
+                icon.classList.remove('ph-list');
+                icon.classList.add('ph-x');
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    });
+</script>
