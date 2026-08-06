@@ -38,6 +38,7 @@ import FloatingWidget from '../components/FloatingWidget.astro';
 			}
 			html {
 				scroll-behavior: smooth;
+				scroll-padding-top: 120px;
 			}
 			body {
 				font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -48,6 +49,7 @@ import FloatingWidget from '../components/FloatingWidget.astro';
 				color: var(--text);
 				background-color: var(--bg);
 				-webkit-font-smoothing: antialiased;
+				overflow-x: hidden;
 			}
 			h1, h2, h3, h4 {
 				color: var(--heading);

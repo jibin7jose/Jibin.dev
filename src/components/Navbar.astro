@@ -34,7 +34,7 @@
         <a href="#experience" data-section="experience" class="nav-link mobile-link">Experience</a>
         <a href="#extra" data-section="extra" class="nav-link mobile-link">Certifications</a>
         
-        <div class="mobile-socials">
+        <div class="bottom-icons">
             <a href="https://github.com/jibin7jose" target="_blank"><i class="ph ph-github-logo"></i></a>
             <a href="https://www.linkedin.com/in/jibin--jose" target="_blank"><i class="ph ph-linkedin-logo"></i></a>
         </div>
@@ -112,13 +112,14 @@
         right: 0;
         width: 50%;
         min-width: 220px;
+        height: calc(100vh - 70px); /* Fallback */
+        height: calc(100dvh - 70px); /* 70px is approximate header height */
+        overflow-y: auto;
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         padding: 2rem 1.5rem;
         border-left: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        border-bottom-left-radius: 1rem;
         box-shadow: -5px 10px 25px rgba(0,0,0,0.05);
     }
     
@@ -128,7 +129,7 @@
     
     /* Opening Stagger */
     .mobile-nav.is-open:not(.is-closing) a.mobile-link,
-    .mobile-nav.is-open:not(.is-closing) .mobile-socials {
+    .mobile-nav.is-open:not(.is-closing) .bottom-icons {
         animation: staggerIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         opacity: 0;
     }
@@ -138,16 +139,16 @@
     .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(3) { animation-delay: 0.15s; }
     .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(4) { animation-delay: 0.20s; }
     .mobile-nav.is-open:not(.is-closing) a.mobile-link:nth-child(5) { animation-delay: 0.25s; }
-    .mobile-nav.is-open:not(.is-closing) .mobile-socials { animation-delay: 0.30s; }
+    .mobile-nav.is-open:not(.is-closing) .bottom-icons { animation-delay: 0.30s; }
     
     /* Closing Stagger */
     .mobile-nav.is-closing a.mobile-link,
-    .mobile-nav.is-closing .mobile-socials {
+    .mobile-nav.is-closing .bottom-icons {
         animation: staggerOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         opacity: 1;
     }
     
-    .mobile-nav.is-closing .mobile-socials { animation-delay: 0.0s; }
+    .mobile-nav.is-closing .bottom-icons { animation-delay: 0.0s; }
     .mobile-nav.is-closing a.mobile-link:nth-child(5) { animation-delay: 0.05s; }
     .mobile-nav.is-closing a.mobile-link:nth-child(4) { animation-delay: 0.10s; }
     .mobile-nav.is-closing a.mobile-link:nth-child(3) { animation-delay: 0.15s; }
@@ -180,20 +181,28 @@
         font-weight: 600;
     }
     
-    .mobile-socials {
+    .bottom-icons {
         display: flex;
+        width: 100%;
+        justify-content: flex-end;
         gap: 1.5rem;
         padding-top: 1.5rem;
         border-top: 1px dashed var(--border);
+        margin-top: 2rem;
     }
     
-    .mobile-socials a {
+    .bottom-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
         color: var(--text);
         font-size: 1.5rem;
         text-decoration: none;
         transition: color 0.2s ease;
     }
-    .mobile-socials a:hover {
+    .bottom-icons a:hover {
         color: var(--link);
     }
 
@@ -271,12 +280,17 @@
         
         function toggleMenu() {
             const icon = btn.querySelector('i');
+            const widget = document.querySelector('.floating-widget');
             
             if (nav.classList.contains('is-open') && !nav.classList.contains('is-closing')) {
                 // Trigger closing animation
                 nav.classList.add('is-closing');
                 icon.classList.remove('ph-x');
                 icon.classList.add('ph-list');
+                
+                if (widget) {
+                    widget.style.display = ''; // Restore widget visibility
+                }
                 
                 // Wait for staggered animations to finish (0.25s delay + 0.3s duration = 0.55s)
                 setTimeout(() => {
@@ -289,6 +303,10 @@
                 nav.classList.remove('is-closing');
                 icon.classList.remove('ph-list');
                 icon.classList.add('ph-x');
+                
+                if (widget) {
+                    widget.style.display = 'none'; // Hide widget while menu is open
+                }
             }
         }
 
