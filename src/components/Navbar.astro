@@ -11,6 +11,12 @@
             <a href="#extra" data-section="extra" class="nav-link">Certifications</a>
         </nav>
         
+        <!-- Desktop Socials -->
+        <div class="desktop-socials">
+            <a href="https://github.com/jibin7jose" target="_blank" title="GitHub"><i class="ph ph-github-logo"></i></a>
+            <a href="https://www.linkedin.com/in/jibin--jose" target="_blank" title="LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+        </div>
+        
         <!-- Mobile Icon Nav (Scroll Spy) -->
         <nav class="mobile-icon-nav">
             <a href="#home" data-section="home" class="nav-link mobile-icon-link active"><i class="ph ph-house"></i></a>
@@ -65,7 +71,7 @@
     .desktop-nav {
         display: flex;
         justify-content: center;
-        gap: 3rem; /* Spacious separation */
+        gap: 2rem; /* Reduced to fit social icons */
         flex-wrap: wrap;
     }
     
@@ -87,6 +93,35 @@
     
     .desktop-nav a:hover {
         transform: translateY(-1px);
+    }
+    
+    .desktop-socials {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .desktop-socials a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-size: 1.25rem;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    
+    .desktop-socials a:hover {
+        border-color: var(--link);
+        color: var(--link);
+        background: rgba(2, 132, 199, 0.05);
     }
 
     /* Mobile specific styles */
@@ -217,6 +252,9 @@
     }
 
     @media (max-width: 768px) {
+        .desktop-socials {
+            display: none;
+        }
         .nav-container {
             justify-content: space-between; /* Space between hamburger and icons */
             align-items: center;
