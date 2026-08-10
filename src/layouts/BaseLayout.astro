@@ -118,7 +118,9 @@ import FloatingWidget from '../components/FloatingWidget.astro';
 		<Navbar />
 		<FloatingWidget />
 		<main>
-			<slot />
+			<div style="overflow-x: clip;">
+				<slot />
+			</div>
 		</main>
 		<Footer />
 		
